@@ -1,0 +1,31 @@
+type Time = int;
+type Result = 
+ variant {
+   err: text;
+   ok: text;
+ };
+type Phone = text;
+type Name = text;
+type Gender = 
+ variant {
+   female;
+   male;
+ };
+type Entry = 
+ record {
+   age: nat;
+   desc: text;
+   gender: Gender;
+   location: text;
+   phone_number: Phone;
+   time: Time;
+ };
+service : {
+  delete_user: (Name) -> () query;
+  get_num_users: () -> (nat) query;
+  insert: (Name, Entry) -> () query;
+  intialize_args: (Entry) -> (Result) query;
+  lookup: (Name) -> (opt Entry) query;
+  pop_retrieve_user: (Name) -> (opt Entry) query;
+  update_user_data: (Name, Entry) -> (opt Entry) query;
+}

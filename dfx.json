@@ -1,0 +1,7 @@
+{
+  "canisters": {
+    "user_directory_manager": {
+      "main": "src/user_directory_manager/Main.mo"
+    }
+  }
+}
